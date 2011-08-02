@@ -2,7 +2,7 @@
 /*
 Plugin Name: Easy Smooth Scroll Links
 Plugin URI: http://www.92app.com/wordpress-plugins/easy-smooth-scroll-links
-Description:Adds smoth scrollling effect to links that link to other parts of the page,which are called "Page Anchors".Extermely useful for setting up a menu which can send you to different section of a post.
+Description:Adds smoth scrolling effect to links that link to other parts of the page,which are called "Page Anchors".Extremely useful for setting up a menu which can send you to different section of a post.
 Version: 1.0
 Author: Jeriff Cheng
 Author URI: http://www.92app.com/
