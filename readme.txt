@@ -11,6 +11,8 @@ Easy Smooth Scroll Links adds smooth scrolling effect to links that link to othe
 
 For more information,refer to <a title="Easy Smooth Scroll Links WordPress Plugin" href="http://www.92app.com/wordpress-plugins/easy-smooth-scroll-links" target="_blank">Easy Smooth Scroll Links WordPress Plugin</a>
 
+My personal blog:<a href="www.92app.com" target="_blank">www.92app.com</a>
+
 == Installation ==
 1. Upload the full directory into your wp-content/plugins directory
 2. Activate the plugin at the plugin administration page
