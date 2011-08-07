@@ -23,13 +23,22 @@ For FAQs and bug report,refer to <a title="Easy Smooth Scroll Links WordPress Pl
 
 == Screenshots ==
 
-1. Set up an anchor
-2. Link to an anchor
+1. Page Anchor Shortcode
+2. Set up an anchor
+3. Link to an anchor
+
 
 == Changelog ==
 
 = 1.0 =
 *First Version
 
+= 1.1---08.8.2011=
+NEW : Add Page Anchor Shortcode.
+
+Changed : Use wp_enqueue_script function to load the script instead of the default <script> tag.
+
+
 == Upgrade Notice ==
-soon...
+= 1.1 =
+Add Page Anchor Shortcode

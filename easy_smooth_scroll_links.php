@@ -3,7 +3,7 @@
 Plugin Name: Easy Smooth Scroll Links
 Plugin URI: http://www.92app.com/wordpress-plugins/easy-smooth-scroll-links
 Description:Adds smoth scrolling effect to links that link to other parts of the page,which are called "Page Anchors".Extremely useful for setting up a menu which can send you to different section of a post.
-Version: 1.0
+Version: 1.1
 Author: Jeriff Cheng
 Author URI: http://www.92app.com/
 */
@@ -26,7 +26,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     
 */
 
-//add anchor button to visual editor
+//load required script in footer
+if(!is_admin()){
+wp_enqueue_script('easy_smooth_scroll_links', plugins_url('easy_smooth_scroll_links.js',__FILE__), false, false, true);
+}
+
+//The invisible way of adding anchors(Anchor button)
 if ( ! function_exists('enable_anchor_button') ) {
 function enable_anchor_button($buttons) {
   $buttons[] = 'anchor';
@@ -35,12 +40,11 @@ function enable_anchor_button($buttons) {
 add_filter("mce_buttons_2", "enable_anchor_button");
 }
 
-//add required js
-if ( ! function_exists('add_smooth_scroll_links_js') ) {
-function add_smooth_scroll_links_js() {
-         ?>
-		 <script type="text/javascript" src="<?php echo get_option('siteurl') . '/' . PLUGINDIR . '/' . dirname(plugin_basename (__FILE__))?>/easy_smooth_scroll_links.js"></script>
-         <?php
-		 }
-add_action(wp_footer,add_smooth_scroll_links_js,20);
+
+//The visible way of adding anchors(Shortcode)
+if ( ! function_exists('essl_shortcode') ) {
+function essl_shortcode( $atts, $content = null ) {
+   return '<a name="' . $content . '">';
+}
+add_shortcode( 'anchor', 'essl_shortcode' );
 }
