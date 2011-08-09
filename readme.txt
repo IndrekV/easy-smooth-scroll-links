@@ -7,7 +7,14 @@ Tested up to: 3.2.1
 Stable tag: trunk
 
 == Description ==
-Easy Smooth Scroll Links adds smooth scrolling effect to links that link to other parts of the page,which are called "Page Anchors". This plugin will enable you to easily create Page Anchors and add smooth scrolling effect to links that point to Page Anchors,instead of "jumping" to them. Easy Smooth Scroll Links WordPress Plugin is extremely useful for setting up a menu which can send you to different sections of a post.
+ This plugin will enable you to easily create Page Anchors and add smooth scrolling effect to links that point to Page Anchors,instead of "jumping" to them. Easy Smooth Scroll Links WordPress Plugin is extremely useful for setting up a menu which can send you to different sections of a post.
+ 
+ Features:
+ 
+ * Create Page Anchors in WordPress Visual Editor easily through either Anchor Button or shortcode
+   
+ * Add smooth scrolling effect to all links that point to Anchors
+
 
 For more information,refer to <a title="Easy Smooth Scroll Links WordPress Plugin" href="http://www.92app.com/wordpress-plugins/easy-smooth-scroll-links" target="_blank">Easy Smooth Scroll Links WordPress Plugin</a>
 
