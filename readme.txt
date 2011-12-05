@@ -16,9 +16,9 @@ Stable tag: trunk
  * Add smooth scrolling effect to all links that point to Anchors
 
 
-For more information,refer to <a title="Easy Smooth Scroll Links WordPress Plugin" href="http://www.92app.com/wordpress-plugins/easy-smooth-scroll-links" target="_blank">Easy Smooth Scroll Links WordPress Plugin</a>
+For more information,refer to <a rel="follow" title="Easy Smooth Scroll Links WordPress Plugin" href="http://www.92app.com/wordpress-plugins/easy-smooth-scroll-links" target="_blank">Easy Smooth Scroll Links WordPress Plugin</a>
 
-My personal blog:<a href="http://www.92app.com" target="_blank">www.92app.com</a>
+My personal blog:<a rel="follow" href="http://www.92app.com" target="_blank">www.92app.com</a>
 
 == Installation ==
 1. Upload the full directory into your wp-content/plugins directory
@@ -26,7 +26,7 @@ My personal blog:<a href="http://www.92app.com" target="_blank">www.92app.com</a
 3. That's it!
 
 == Frequently Asked Questions ==
-For FAQs and bug report,refer to <a title="Easy Smooth Scroll Links WordPress Plugin" href="http://www.92app.com/wordpress-plugins/easy-smooth-scroll-links" target="_blank">Easy Smooth Scroll Links WordPress Plugin</a>
+For FAQs and bug report,refer to <a rel="follow" title="Easy Smooth Scroll Links WordPress Plugin" href="http://www.92app.com/wordpress-plugins/easy-smooth-scroll-links" target="_blank">Easy Smooth Scroll Links WordPress Plugin</a>
 
 == Screenshots ==
 
