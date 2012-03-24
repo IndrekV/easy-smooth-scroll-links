@@ -15,10 +15,16 @@ Stable tag: trunk
    
  * Add smooth scrolling effect to all links that point to Anchors
 
-
 For more information,refer to <a rel="follow" title="Easy Smooth Scroll Links WordPress Plugin" href="http://www.92app.com/wordpress-plugins/easy-smooth-scroll-links" target="_blank">Easy Smooth Scroll Links WordPress Plugin</a>
 
-My personal blog:<a rel="follow" href="http://www.92app.com" target="_blank">www.92app.com</a>
+<h4>Other WordPress Plugins I created:</h4>
+<ul>
+	<li><a rel="follow" target="_blank" href="http://www.92app.com/wordpress-plugins/facebook-twitter-google-plus-one-share-buttons" title="Facebook,Twitter,Google plus one Share Buttons WordPress Plugin">Facebook,Twitter,Google plus one Share Buttons</a></li>
+	<li><a rel="follow" title="Author Box After Posts WordPress Plugin" href="http://www.92app.com/wordpress-plugins/author-box-after-posts" target="_blank">Author Box After Posts</a> :Adds an author box after your post contents.</li>
+	<li><a rel="follow" target="_blank" href="http://www.92app.com/wordpress-plugins/nofollow-internal-links" title="Nofollow Internal Links WordPress Plugin">Nofollow Internal Links</a> :Adds the "nofollow" rel attribute to internal links</li>
+</ul>
+
+My blog:<a rel="follow" href="http://www.92app.com" target="_blank">www.92app.com</a>
 
 == Installation ==
 1. Upload the full directory into your wp-content/plugins directory
