@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     
 */
 
-//load required script in footer
+//load required script
 add_action('wp_enqueue_scripts', 'essl_script');
 if ( ! function_exists('essl_script') ) {
 	function essl_script() {
@@ -54,7 +54,7 @@ if ( ! function_exists('essl_script') ) {
 }
 
 
-//The invisible way of adding anchors(Anchor button)
+//Visual Editor Button
 if ( ! function_exists('enable_anchor_button') ) {
 function enable_anchor_button($buttons) {
   $buttons[] = 'anchor';
@@ -64,7 +64,7 @@ add_filter("mce_buttons_2", "enable_anchor_button");
 }
 
 
-//The visible way of adding anchors(Shortcode)
+//Shortcode
 if ( ! function_exists('essl_shortcode') ) {
 function essl_shortcode( $atts, $content = null ) {
    return '<a name="' . $content . '">';
