@@ -39,17 +39,17 @@ For FAQs and bug report,refer to <a target="_blank" rel="follow" href="http://ww
 
 *Fix: wp enqueue script error  when turning WP_DEBUG mode on
 
-= 1.3 ---02.01.2014 =
+= 1.3 =
 
 *NEW: You can set scroll speed and offset value on WordPress backend now !
 
-= 1.2 ---02.01.2014=
+= 1.2 =
 
 *FIX：Chrome Compatibility Problem
 
 *FIX: wp_enqueue_script was called incorrectly
 
-= 1.1---08.8.2011=
+= 1.1 =
 
 *NEW : Add Page Anchor Shortcode.
 
