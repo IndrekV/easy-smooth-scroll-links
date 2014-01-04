@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Easy Smooth Scroll Links
-Plugin URI: http://www.92app.com/wordpress-plugins/easy-smooth-scroll-links
-Description:Adds smoth scrolling effect to links that link to other parts of the page,which are called "Page Anchors".Extremely useful for setting up a menu which can send you to different section of a post.
-Version: 1.1
+Plugin URI: http://www.jeriffcheng.com/wordpress-plugins/easy-smooth-scroll-links
+Description: Adds smoth scrolling effect to links that link to other parts of the page,which are called "Page Anchors".
+Version: 1.2
 Author: Jeriff Cheng
-Author URI: http://www.92app.com/
+Author URI: http://www.jeriffcheng.com/
 */
 
 /*
@@ -27,9 +27,32 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 //load required script in footer
-if(!is_admin()){
-wp_enqueue_script('easy_smooth_scroll_links', plugins_url('easy_smooth_scroll_links.js',__FILE__), false, false, true);
+add_action('wp_enqueue_scripts', 'essl_script');
+if ( ! function_exists('essl_script') ) {
+	function essl_script() {
+    ?>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+</script>
+<?php
+	}
 }
+
 
 //The invisible way of adding anchors(Anchor button)
 if ( ! function_exists('enable_anchor_button') ) {
