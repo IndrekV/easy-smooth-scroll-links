@@ -6,7 +6,7 @@ Tested up to: 3.8
 Stable tag: trunk
 
 == Description ==
- This plugin will enable you to easily create Page Anchors and add smooth scrolling effect to links that point to Page Anchors,instead of "jumping" to them. Easy Smooth Scroll Links WordPress Plugin is extremely useful for setting up a menu which can send you to different sections of a post.
+Create Page Anchors and add smooth scrolling effect to links that link to Page Anchors. You can set scroll speed and offset value. Works on IE, Firefox, Chrome...
  
  Features:
  
@@ -27,9 +27,9 @@ For FAQs and bug report,refer to <a rel="follow" title="Easy Smooth Scroll Links
 
 == Screenshots ==
 
-1. Page Anchor Shortcode
-2. Set up an anchor
-3. Link to an anchor
+1. You can set scroll speed and offset value
+2. Page Anchor Button in WordPress Visual Editor
+
 
 
 == Changelog ==
@@ -38,14 +38,17 @@ For FAQs and bug report,refer to <a rel="follow" title="Easy Smooth Scroll Links
 *First Version
 
 = 1.1---08.8.2011=
-NEW : Add Page Anchor Shortcode.
+*NEW : Add Page Anchor Shortcode.
 
 Changed : Use wp_enqueue_script function to load the script instead of the default <script> tag.
 
 = 1.2 ---02.01.2014=
-FIX：Chrome Compatibility Problem
-FIX: wp_enqueue_script was called incorrectly
+*FIX：Chrome Compatibility Problem
+*FIX: wp_enqueue_script was called incorrectly
+
+= 1.3 ---02.01.2014=
+*NEW: You can set scroll speed and offset value on WordPress backend now !
 
 == Upgrade Notice ==
-= 1.2 =
-FIX：Chrome Compatibility Problem
+= 1.3 =
+*NEW: You can set scroll speed and offset value on WordPress backend now !
