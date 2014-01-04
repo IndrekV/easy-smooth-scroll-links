@@ -3,7 +3,7 @@
 Plugin Name: Easy Smooth Scroll Links
 Plugin URI: http://www.jeriffcheng.com/wordpress-plugins/easy-smooth-scroll-links
 Description: Create Page Anchors and add smooth scrolling effect to links that link to Page Anchors. You can set scroll speed and offset value.
-Version: 1.3
+Version: 1.3.1
 Author: Jeriff Cheng
 Author URI: http://www.jeriffcheng.com/
 */
@@ -25,8 +25,6 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
     
 */
-
-
 
 //Visual Editor Button
 if ( ! function_exists('enable_anchor_button') ) {
@@ -116,7 +114,13 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
 	
 	if ( !is_admin() )
 	{
-	    wp_enqueue_script( 'jquery' );
+
+		add_action( 'wp_enqueue_scripts', 'essl_enqueue_jquery', 999 );
+		add_action('wp_footer', 'essl_script',100);
+		
+		function essl_enqueue_jquery() {
+			wp_enqueue_script( 'jquery' );
+		}
 		function essl_script() {
 					?>	<script type="text/javascript">
 					jQuery.noConflict();
@@ -141,10 +145,7 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
 
 					});
 					})(jQuery);	</script>
-
-					<?php
-		}	
-		add_action('wp_footer', 'essl_script');
+					<?php  }	
 	}	
 endif;
 

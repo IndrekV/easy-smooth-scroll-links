@@ -35,14 +35,13 @@ For FAQs and bug report,refer to <a target="_blank" rel="follow" href="http://ww
 
 == Changelog ==
 
-= 1.0 =
-*First Version
+= 1.3.1 =
 
-= 1.1---08.8.2011=
+*Fix: wp enqueue script error  when turning WP_DEBUG mode on
 
-*NEW : Add Page Anchor Shortcode.
+= 1.3 ---02.01.2014 =
 
-Changed : Use wp_enqueue_script function to load the script instead of the default <script> tag.
+*NEW: You can set scroll speed and offset value on WordPress backend now !
 
 = 1.2 ---02.01.2014=
 
@@ -50,10 +49,18 @@ Changed : Use wp_enqueue_script function to load the script instead of the defau
 
 *FIX: wp_enqueue_script was called incorrectly
 
-= 1.3 ---02.01.2014=
-*NEW: You can set scroll speed and offset value on WordPress backend now !
+= 1.1---08.8.2011=
+
+*NEW : Add Page Anchor Shortcode.
+
+Changed : Use wp_enqueue_script function to load the script instead of the default <script> tag.
+
+= 1.0 =
+
+*First Version
 
 == Upgrade Notice ==
 
-= 1.3 =
-*NEW: You can set scroll speed and offset value on WordPress backend now !
+= 1.3.1 =
+
+*Fix: wp enqueue script error  when turning WP_DEBUG mode on
