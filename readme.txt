@@ -6,12 +6,12 @@ Tested up to: 3.8
 Stable tag: trunk
 
 == Description ==
-Create Page Anchors and add smooth scrolling effect to links that link to Page Anchors. You can set scroll speed and offset value. Works on IE, Firefox, Chrome...
+Create Page Anchors and add smooth scrolling effect to links that link to Page Anchors. You can set scroll speed and offset value. Works on IE, Firefox, Chrome, Safari...
  
 Features:
  
  * You can set scroll speed and offset value. 
- * Works on all major browsers: IE, Firefox, Chrome...
+ * Works on all major browsers: IE, Firefox, Chrome, Safari...
  * Visual Editor Anchor Button
  * Shortcode Supported
 
