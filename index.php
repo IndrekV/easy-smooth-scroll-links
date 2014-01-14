@@ -75,6 +75,7 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
 		{
 			register_setting(ESSLPluginOptions_ID.'_options', 'essl_speed');
 			register_setting(ESSLPluginOptions_ID.'_options', 'essl_offset');
+			register_setting(ESSLPluginOptions_ID.'_options', 'essl_hash');
 		}
 		/** function/method
 		* Usage: hooking (registering) the plugin menu
@@ -131,12 +132,15 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
 						$(function() {
 						  $('a[href*=#]:not([href=#])').click(function() {
 							if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-							  var target = $(this.hash);
+								var hash = this.hash
+							  var target = $(hash);
 							  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 							  if (target.length) {
 								$('html,body').animate({
 								  scrollTop: target.offset().top -<?php echo  get_option('essl_offset',20);?>   
-								}, <?php echo  get_option('essl_speed',900);?>);
+								}, <?php echo  get_option('essl_speed',900);?>, function() {
+									if(<?php echo  get_option('essl_hash',false);?>) location.hash = hash;
+								});
 								return false;
 							  }
 							}

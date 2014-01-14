@@ -31,6 +31,19 @@
                  </label>
              </td>
 		   </tr>
+       <tr>
+       <td style="padding:25px;font-family:Verdana, Geneva, sans-serif;color:#666;">
+                 <label for="essl_hash">
+                     <p>Show hash in address bar</p>
+                     <p>
+                      <select name="essl_hash">
+                        <option value="false" <?php echo (get_option('essl_hash')=="false")? 'selected="selected"': ""; ?>>false</option>
+                        <option value="true" <?php echo (get_option('essl_hash')=="true")? 'selected="selected"': ""; ?>>true</option>
+                      </select>
+                    </p>
+                 </label>
+             </td>
+       </tr>
 		</tbody>
 		
 
