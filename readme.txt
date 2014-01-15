@@ -1,5 +1,5 @@
 === Easy Smooth Scroll Links ===
-Contributors: Jeriff Cheng
+Contributors: Jeriff Cheng, Indrek Vändrik
 Tags: anchor,anchor text,links,link,smooth scroll links,scroll,smooth scroll
 Requires at least: 2.6.5
 Tested up to: 3.8
@@ -35,6 +35,10 @@ For FAQs and bug report,refer to <a target="_blank" rel="follow" href="http://ww
 
 == Changelog ==
 
+= 1.3.2 =
+
+*NEW: Added the possibility to show hash tag in addressbar
+
 = 1.3.1 =
 
 *Fix: wp enqueue script error  when turning WP_DEBUG mode on
@@ -61,6 +65,6 @@ Changed : Use wp_enqueue_script function to load the script instead of the defau
 
 == Upgrade Notice ==
 
-= 1.3.1 =
+= 1.3.2 =
 
-*Fix: wp enqueue script error  when turning WP_DEBUG mode on
+*NEW: Added the possibility to show hash tag in addressbar
