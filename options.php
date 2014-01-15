@@ -37,15 +37,14 @@
                      <p>Show hash in address bar</p>
                      <p>
                       <select name="essl_hash">
-                        <option value="false" <?php echo (get_option('essl_hash')=="false")? 'selected="selected"': ""; ?>>false</option>
-                        <option value="true" <?php echo (get_option('essl_hash')=="true")? 'selected="selected"': ""; ?>>true</option>
+                        <option value="false" <?php if (get_option('essl_hash')=="false") echo 'selected="selected"'; ?>>false</option>
+                        <option value="true" <?php if (get_option('essl_hash')=="true") echo 'selected="selected"'; ?>>true</option>
                       </select>
                     </p>
                  </label>
              </td>
        </tr>
 		</tbody>
-		
 
 		<tfoot>
 		   <tr>
