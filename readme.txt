@@ -35,6 +35,10 @@ For FAQs and bug report,refer to <a target="_blank" rel="follow" href="http://ww
 
 == Changelog ==
 
+= 1.4 =
+
+*Fix: Support for wp version 3.9 and up.
+
 = 1.3.2 =
 
 *NEW: Added the possibility to show hash tag in addressbar
@@ -65,6 +69,6 @@ Changed : Use wp_enqueue_script function to load the script instead of the defau
 
 == Upgrade Notice ==
 
-= 1.3.2 =
+= 1.4 =
 
-*NEW: Added the possibility to show hash tag in addressbar
+*Fix: Support for wp version 3.9 and up.
