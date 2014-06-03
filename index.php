@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Easy Smooth Scroll Links Plus
-Plugin URI: http://www.jeriffcheng.com/wordpress-plugins/easy-smooth-scroll-links
+Plugin URI: https://github.com/wp-plugins/easy-smooth-scroll-links
 Description: Create Page Anchors and add smooth scrolling effect to links that link to Page Anchors. You can set scroll speed and offset value.
 Version: 1.4.1
 Author: Jeriff Cheng, Indrek Vändrik
