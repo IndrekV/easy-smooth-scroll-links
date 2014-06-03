@@ -3,7 +3,7 @@
 Plugin Name: Easy Smooth Scroll Links
 Plugin URI: http://www.jeriffcheng.com/wordpress-plugins/easy-smooth-scroll-links
 Description: Create Page Anchors and add smooth scrolling effect to links that link to Page Anchors. You can set scroll speed and offset value.
-Version: 1.4
+Version: 1.4.1
 Author: Jeriff Cheng, Indrek Vändrik
 Author URI: http://www.jeriffcheng.com/
 */
@@ -43,7 +43,7 @@ if ( $wp_version < 3.9 ) {
 		add_filter( 'mce_buttons_2', 'anchor_register_button' );
 	}
 	function anchor_add_button( $plugin_array ) {
-		$plugin_array['anchor'] = $dir = plugins_url( '/anchor/plugin.js', __FILE__ );
+		$plugin_array['anchor'] = $dir = plugins_url( '/anchor/plugin.min.js', __FILE__ );
 		return $plugin_array;
 	}
 	function anchor_register_button( $buttons ) {
@@ -122,6 +122,17 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
 		}
 		
     }
+
+    // Add settings link on plugin page
+	function essl_plugin_action_links($links) { 
+	  $settings_link = '<a href="options-general.php?page=essl-plugin-options_options">Settings</a>'; 
+	  array_unshift($links, $settings_link); 
+	  return $links; 
+	}
+
+	$plugin = plugin_basename(__FILE__); 
+	add_filter("plugin_action_links_$plugin", 'essl_plugin_action_links' );
+
 	
 	if ( is_admin() )
 	{
@@ -137,7 +148,10 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
 		add_action('wp_footer', 'essl_script',100);
 		
 		function essl_enqueue_jquery() {
+			wp_deregister_script( 'jquery-easing' );
+			wp_register_script( 'jquery-easing', '//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js',array( 'jquery' ) );
 			wp_enqueue_script( 'jquery' );
+			wp_enqueue_script('jquery-easing');
 		}
 		function essl_script() {
 					?>	<script type="text/javascript">
