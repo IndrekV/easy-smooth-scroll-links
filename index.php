@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Easy Smooth Scroll Links
+Plugin Name: Easy Smooth Scroll Links Plus
 Plugin URI: http://www.jeriffcheng.com/wordpress-plugins/easy-smooth-scroll-links
 Description: Create Page Anchors and add smooth scrolling effect to links that link to Page Anchors. You can set scroll speed and offset value.
 Version: 1.4.1
@@ -154,33 +154,32 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
 			wp_enqueue_script('jquery-easing');
 		}
 		function essl_script() {
-					?>	<script type="text/javascript">
-					jQuery.noConflict();
-					(function( $ ) {
+?>	
+			<script type="text/javascript">
+				jQuery.noConflict();
+				(function($) {
+				// More code using $ as alias to jQuery
+
 					$(function() {
-					// More code using $ as alias to jQuery
-
-						$(function() {
-						  $('a[href*=#]:not([href=#])').click(function() {
-							if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-								var hash = this.hash
-							  var target = $(hash);
-							  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-							  if (target.length) {
-								$('html,body').animate({
-								  scrollTop: target.offset().top -<?php echo  get_option('essl_offset',20);?>   
-								}, <?php echo  get_option('essl_speed',900);?>, function() {
-									if(<?php echo  get_option('essl_hash',false);?>) location.hash = hash;
-								});
-								return false;
-							  }
-							}
-						  });
-						});
-
+					  $('a[href*=#]:not([href=#])').click(function() {
+						if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+							var hash = this.hash
+						  var target = $(hash);
+						  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+						  if (target.length) {
+							$('html,body').animate({
+							  scrollTop: target.offset().top -<?php echo  get_option('essl_offset',20);?>   
+							}, <?php echo  get_option('essl_speed',900);?>, function() {
+								if(<?php echo  get_option('essl_hash',false);?>) location.hash = hash;
+							});
+							return false;
+						  }
+						}
+					  });
 					});
-					})(jQuery);	</script>
-					<?php  }	
+				})(jQuery);	
+			</script>
+<?php  }	
 	}	
 endif;
 
