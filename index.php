@@ -153,6 +153,12 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
 			wp_enqueue_script( 'jquery' );
 			wp_enqueue_script('jquery-easing');
 		}
+		function g($k,$d) {
+		  if(strlen(get_option($k,$d))>0){
+		    return get_option($k,$d);
+		  }
+		  return $d;
+		}
 		function essl_script() {
 ?>	
 			<script type="text/javascript">
@@ -168,9 +174,9 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
 						  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 						  if (target.length) {
 							$('html,body').animate({
-							  scrollTop: target.offset().top -<?php echo  get_option('essl_offset',20);?>   
-							}, <?php echo  get_option('essl_speed',900);?>, function() {
-								if(<?php echo  get_option('essl_hash',false);?>) location.hash = hash;
+							  scrollTop: target.offset().top -<?php echo g('essl_offset',20);?>   
+							}, <?php echo g('essl_speed',900);?>, function() {
+								if(<?php echo g('essl_hash',false);?>) location.hash = hash;
 							});
 							return false;
 						  }
