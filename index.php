@@ -3,7 +3,7 @@
 Plugin Name: Easy Smooth Scroll Links Plus
 Plugin URI: https://github.com/IndrekV/easy-smooth-scroll-links
 Description: Create Page Anchors and add smooth scrolling effect to links.
-Version: 1.5.0
+Version: 10.0.0
 Author: Jeriff Cheng, Indrek Vändrik
 Author URI: https://github.com/IndrekV/
 */
