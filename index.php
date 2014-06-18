@@ -2,10 +2,10 @@
 /*
 Plugin Name: Easy Smooth Scroll Links Plus
 Plugin URI: https://github.com/IndrekV/easy-smooth-scroll-links
-Description: Create Page Anchors and add smooth scrolling effect to links that link to Page Anchors. You can set scroll speed and offset value.
+Description: Create Page Anchors and add smooth scrolling effect to links.
 Version: 1.4.2
 Author: Jeriff Cheng, Indrek Vändrik
-Author URI: http://
+Author URI: https://github.com/IndrekV/
 */
 
 /*
@@ -54,25 +54,25 @@ if ( $wp_version < 3.9 ) {
 
 
 //Shortcode
-if ( ! function_exists('essl_shortcode') ) {
-function essl_shortcode( $atts, $content = null ) {
+if ( ! function_exists('esslp_shortcode') ) {
+function esslp_shortcode( $atts, $content = null ) {
    return '<a name="' . $content . '">';
 }
-add_shortcode( 'anchor', 'essl_shortcode' );
+add_shortcode( 'anchor', 'esslp_shortcode' );
 }
 
 
 /* 
 Registering Options Page
 */	
-if(!class_exists('ESSLPluginOptions')) :
+if(!class_exists('ESSLPPluginOptions')) :
 
 // DEFINE PLUGIN ID
-define('ESSLPluginOptions_ID', 'essl-plugin-options');
+define('ESSLPPluginOptions_ID', 'public-plugin-options');
 // DEFINE PLUGIN NICK
-define('ESSLPluginOptions_NICK', 'ESSL Settings');
+define('ESSLPPluginOptions_NICK', 'ESSLP Settings');
 
-    class ESSLPluginOptions
+    class ESSLPPluginOptions
     {
 		/** function/method
 		* Usage: return absolute file path
@@ -90,9 +90,9 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
 		*/
 		public static function register()
 		{
-			register_setting(ESSLPluginOptions_ID.'_options', 'essl_speed');
-			register_setting(ESSLPluginOptions_ID.'_options', 'essl_offset');
-			register_setting(ESSLPluginOptions_ID.'_options', 'essl_hash');
+			register_setting(ESSLPPluginOptions_ID.'_options', 'esslp_speed');
+			register_setting(ESSLPPluginOptions_ID.'_options', 'esslp_offset');
+			register_setting(ESSLPPluginOptions_ID.'_options', 'esslp_hash');
 		}
 		/** function/method
 		* Usage: hooking (registering) the plugin menu
@@ -102,7 +102,7 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
 		public static function menu()
 		{
 			// Create menu tab
-			add_options_page(ESSLPluginOptions_NICK.' Plugin Options', ESSLPluginOptions_NICK, 'manage_options', ESSLPluginOptions_ID.'_options', array('ESSLPluginOptions', 'options_page'));
+			add_options_page(ESSLPPluginOptions_NICK.' Plugin Options', ESSLPPluginOptions_NICK, 'manage_options', ESSLPPluginOptions_ID.'_options', array('ESSLPPluginOptions', 'options_page'));
 		}
 		/** function/method
 		* Usage: show options/settings form page
@@ -116,7 +116,7 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
 				wp_die( __('You do not have sufficient permissions to access this page.') );
 			}
 			
-			$plugin_id = ESSLPluginOptions_ID;
+			$plugin_id = ESSLPPluginOptions_ID;
 			// display options page
 			include(self::file_path('options.php'));
 		}
@@ -124,30 +124,30 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
     }
 
     // Add settings link on plugin page
-	function essl_plugin_action_links($links) { 
-	  $settings_link = '<a href="options-general.php?page=essl-plugin-options_options">Settings</a>'; 
+	function esslp_plugin_action_links($links) { 
+	  $settings_link = '<a href="options-general.php?page=esslp-plugin-options_options">Settings</a>'; 
 	  array_unshift($links, $settings_link); 
 	  return $links; 
 	}
 
 	$plugin = plugin_basename(__FILE__); 
-	add_filter("plugin_action_links_$plugin", 'essl_plugin_action_links' );
+	add_filter("plugin_action_links_$plugin", 'esslp_plugin_action_links' );
 
 	
 	if ( is_admin() )
 	{
-		add_action('admin_init', array('ESSLPluginOptions', 'register'));
-		add_action('admin_menu', array('ESSLPluginOptions', 'menu'));
+		add_action('admin_init', array('ESSLPPluginOptions', 'register'));
+		add_action('admin_menu', array('ESSLPPluginOptions', 'menu'));
 		
 	}
 	
 	if ( !is_admin() )
 	{
 
-		add_action( 'wp_enqueue_scripts', 'essl_enqueue_jquery', 999 );
-		add_action('wp_footer', 'essl_script',100);
+		add_action( 'wp_enqueue_scripts', 'esslp_enqueue_jquery', 999 );
+		add_action('wp_footer', 'esslp_script',100);
 		
-		function essl_enqueue_jquery() {
+		function esslp_enqueue_jquery() {
 			wp_deregister_script( 'jquery-easing' );
 			wp_register_script( 'jquery-easing', '//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js',array( 'jquery' ) );
 			wp_enqueue_script( 'jquery' );
@@ -159,7 +159,7 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
 		  }
 		  return $d;
 		}
-		function essl_script() {
+		function esslp_script() {
 ?>	
 			<script type="text/javascript">
 				jQuery.noConflict();
@@ -175,9 +175,9 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
 						  target = target.length ? target : _$('[name=' + this.hash.slice(1) +']');
 						  if (target.length) {
 							_$('html,body').animate({
-							  scrollTop: target.offset().top -<?php echo g('essl_offset',20);?>   
-							}, <?php echo g('essl_speed',900);?>, function() {
-								if(<?php echo g('essl_hash',false);?>) location.hash = hash;
+							  scrollTop: target.offset().top -<?php echo g('esslp_offset',20);?>   
+							}, <?php echo g('esslp_speed',900);?>, function() {
+								if(<?php echo g('esslp_hash',false);?>) location.hash = hash;
 							});
 							return false;
 						  }
