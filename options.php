@@ -6,11 +6,11 @@
     
 	<?php settings_fields($plugin_id.'_options'); ?>
     
-    <h2>Easy Smooth Scroll Links &raquo; Settings</h2>
+    <h2>Easy Smooth Scroll Links Plus &raquo; Settings</h2>
     <table class="widefat">
 		<thead>
 		   <tr>
-			 <th><a target="_blank" href="http://www.jeriffcheng.com/wordpress-plugins/easy-smooth-scroll-links">FAQs</a> - <a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/easy-smooth-scroll-links?filter=5#postform">Rate it</a> - <a target="_blank" href="http://wordpress.org/support/plugin/easy-smooth-scroll-links">Support Forum</a>    ---- Suggestions? <a target="_blank" href="http://www.jeriffcheng.com/contact">Contact Me</a></th>
+			 <th><a target="_blank" href="https://github.com/IndrekV/easy-smooth-scroll-links-plus">Info</a></th>
 		   </tr>
 		</thead>
 
