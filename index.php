@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Easy Smooth Scroll Links Plus
-Plugin URI: https://github.com/wp-plugins/easy-smooth-scroll-links
+Plugin URI: https://github.com/IndrekV/easy-smooth-scroll-links
 Description: Create Page Anchors and add smooth scrolling effect to links that link to Page Anchors. You can set scroll speed and offset value.
 Version: 1.4.2
 Author: Jeriff Cheng, Indrek Vändrik
-Author URI: http://www.jeriffcheng.com/
+Author URI: http://
 */
 
 /*
@@ -163,17 +163,18 @@ define('ESSLPluginOptions_NICK', 'ESSL Settings');
 ?>	
 			<script type="text/javascript">
 				jQuery.noConflict();
-				(function($) {
+				if($==null) _$=jQuery;
+				(function(_$) {
 				// More code using $ as alias to jQuery
 
-					$(function() {
-					  $('a[href*=#]:not([href=#])').click(function() {
+					_$(function() {
+					  _$('a[href*=#]:not([href=#])').click(function() {
 						if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 							var hash = this.hash
-						  var target = $(hash);
-						  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+						  var target = _$(hash);
+						  target = target.length ? target : _$('[name=' + this.hash.slice(1) +']');
 						  if (target.length) {
-							$('html,body').animate({
+							_$('html,body').animate({
 							  scrollTop: target.offset().top -<?php echo g('essl_offset',20);?>   
 							}, <?php echo g('essl_speed',900);?>, function() {
 								if(<?php echo g('essl_hash',false);?>) location.hash = hash;
